@@ -9,6 +9,7 @@ export default class ProductManager {
         limit: limit,
         page: page,
         sort: {price: sort},
+        lean: true,
       });
       if (result.hasNextPage)
         result.nextLink = `http://localhost:8080/api/products/?${

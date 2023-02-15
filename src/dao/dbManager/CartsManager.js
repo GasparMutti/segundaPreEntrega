@@ -25,7 +25,7 @@ export default class CartsManager {
 
   async getCartById(id) {
     try {
-      const cart = await cartModel.findById(id).populate("products.pid");
+      const cart = await cartModel.findById(id).lean().populate("products.pid");
       return cart === null
         ? {
             status: 404,
